@@ -67,15 +67,57 @@ The same exercise is repeated for xTrainData.
 
 Now, it is time to merge both datasets.  You would have noticed right at the beginning, that as far as the dimensions are concerned, the difference between the datasets was in the number of observations.  Since the variables are the same (563 now, because we have added two additional variables - activity and subject), we simply do a "UNION" of two datasets using the following command.
 * xData <- rbind(xTestData, xTrainData)
+
 Again, to reiterate, 
 * Dimensions of xTestData (after changes):        2947 * 563
 * Dimensions of xTrainData (after changes):       7352 * 563
 * Dimensions of xData (xTestData + xTrainData) : 10299 * 563
 
+This completes "Merging the two datasets" - Step 1 of our requirement.
+
+# Extracting only the "mean" and "std" columns.
+Now onto the second requirement that asks us to extract only mean and std columns.  This is accomplished by the following commands.
+
+* toMatch <- c("mean", "std", "subject", "activity")
+* tmpNames <- names(xData[1:5, grep(paste(toMatch,collapse="|"), names(xData))] )
+* xData <- xData[, tmpNames]
+
+* toMatch <- "meanFreq()"
+* tmpNames <- names(xData[1:5, 
+* grep(paste(toMatch,collapse="|"), names(xData))] )
+* xData <- xData[,!(names(xData) %in% tmpNames)]
+
+I chose to remove all columns that had the word either "mean" or "std" in the header.  After viewing through all discussion threads and not coming to a concrete conclusion on which way to go, I have simply taken this approach.
+
+#Appropriately labelling the data 
+I have followed the style guide here:
+* https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
+for labelling the column headers.  
+
+It is not generally recommended that we have hyphens or parenthesis and so, following the style guide, column header named "tBodyAccJerk-energy()-X" becomes "tBodyAccJerk.energy.x".  I have chosen to use capitals in the column names (instead of, say "tbodyaccjerk.energy.x" due to readability reasons.
+
+The labelling is done through the following commands:
+
+* tmpNames <- gsub("-",".",names(xData))
+* tmpNames <- gsub("\\(|\\)","",tmpNames)
+* tmpNames <- gsub(".X",".x",tmpNames)
+* tmpNames <- gsub(".Y",".y",tmpNames)
+* tmpNames <- gsub(".Z",".z",tmpNames)
+* names(xData) <- tmpNames
 
 
 
 
 
+for labelling the column headers.  
 
+It is not generally recommended that we have hyphens or parenthesis and so, following the style guide, column header named "tBodyAccJerk-energy()-X" becomes "tBodyAccJerk.energy.x".  I have chosen to use capitals in the column names (instead of, say "tbodyaccjerk.energy.x" due to readability reasons.
 
+The labelling is done through the following commands:
+
+* tmpNames <- gsub("-",".",names(xData))
+* tmpNames <- gsub("\\(|\\)","",tmpNames)
+* tmpNames <- gsub(".X",".x",tmpNames)
+* tmpNames <- gsub(".Y",".y",tmpNames)
+* tmpNames <- gsub(".Z",".z",tmpNames)
+* names(xData) <- tmpNames
