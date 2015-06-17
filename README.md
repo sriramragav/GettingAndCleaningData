@@ -42,7 +42,7 @@ Similarly, all the other relevant files (subject_test.txt, y_test.txt, x_train.t
 Please note that the location of files is relative to where the run_analysis.R script is present.  run_analysis.R should be at the same level as the UCI HAR Dataset folder is.  Please check folderimage.png here (https://github.com/sriramragav/GettingAndCleaningData/issues/1) in the repository for a better view.
 
 # Cleaning and Merging Test and Training Datasets
-There are a few things we can observe after loading the datasets.
+There are a few things we can observe after loading the datasets. we have captured info about "Test" data only - to keep our discussion simple.
 * Dimensions of xTest Data : 2947 x 561 (Observations (rows) vs Variables (columns) )
 * Dimensions of yTest Data : 2947 x 1 
 * Dimensions of subjectTest Data : 2947 x 1
@@ -51,8 +51,30 @@ There are a few things we can observe after loading the datasets.
 
 Also,
 We know that xTest does not have headers.  Looking at the dimensions and checking at readme.md that comes with the dataset, we can easily conclude that headers are in features dataset.  Using this information,
-names(xTestData) <- features[, 2]
+* names(xTestData) <- features[, 2]
 ensures that xTestData have headers.  We repeat the same exercise for xTrainData.  
+
+We know from readme that there are 30 subjects who have taken this test.  Looking at subjectTest Data's dimensions, we can easily add this as a column to xTestData.  After this merge, we will be able to associate each observation in xTestData to a subject.  The joining of subjectTest to xData is done through this command:
+* xTestData <- cbind(subject=subjectTestData$V1, xTestData)
+The same exercise is repeated for xTrainData.
+
+We know that there are six activities and each activity is given an number.  The activity_labels dataset gives us this information.  yTest data contains the activityid for each of the 2947 observations.  We add this information to the xTest Dataset.
+* xTestData <- cbind(activity=yTestData$V1, xTestData)
+The same exercise is repeated for xTrainData.
+
+With this information, now for each observation in the original xTest Data set, we have added information on who is the subject (a integer between 1 - 30) the values apply to, and which activity was performed (an integer between 1 - 6, each corresponding to an activity as specified in activity_labels table).
+The same exercise is repeated for xTrainData.
+
+Now, it is time to merge both datasets.  You would have noticed right at the beginning, that as far as the dimensions are concerned, the difference between the datasets was in the number of observations.  Since the variables are the same (563 now, because we have added two additional variables - activity and subject), we simply do a "UNION" of two datasets using the following command.
+* xData <- rbind(xTestData, xTrainData)
+Again, to reiterate, 
+* Dimensions of xTestData (after changes):        2947 * 563
+* Dimensions of xTrainData (after changes):       7352 * 563
+* Dimensions of xData (xTestData + xTrainData) : 10299 * 563
+
+
+
+
 
 
 
