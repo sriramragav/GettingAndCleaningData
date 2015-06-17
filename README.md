@@ -35,7 +35,6 @@ The process of unzipping is manual.  By choosing a suitable unzipping program (l
 * The "Inertial signals" folder present in both the test and train subfolders are not considered for the purposes of tha assignment.  This is because, even if the values were to be included during the creation of a dataset, the columns would have to be filtered during subsequent processing (see Step 2 of the requirement of this project).  Also, the Course Discussion here (https://class.coursera.org/getdata-015/forum/thread?thread_id=26 - Question: Do we need an inertial folder) points to the same fact I have stated here.
 
 The following command reads contents of x_test.txt file in the test folder.
-* #Load x_test from file
 * xTestData <- read.delim(".\\UCI HAR Dataset\\test\\x_test.txt", sep = "", header=FALSE)
 
 Similarly, all the other relevant files (subject_test.txt, y_test.txt, x_train.txt, subject_train.txt, y_train.txt, activity_labels.txt and features.txt are read into dataframes).
