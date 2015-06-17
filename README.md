@@ -28,7 +28,16 @@ This is followed up with downloading the zip file using the commands:
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url,destfile="project.zip")
 
-The process of unzipping is manual.  By choosing a suitable unzipping program (like winzip or 7-zip), the contents of the zip file are extracted to the same folder set by the working directory.  
+The process of unzipping is manual.  By choosing a suitable unzipping program (like winzip or 7-zip), the contents of the zip file are extracted to the same folder set by the working directory.  At the end of this process, you end up with the following:
+       * UCI HAR Dataset folder - with "test" and "train" subfolders
+       * activity_labels.txt, features.txt, features_info.txt and readme.txt files
+       * test and train subfolderes contain x_test/train, y_test/train and subject_test/train txt files.
+       * The "Inertial signals" folder present in both the test and train subfolders are not considered for the purposes of tha assignment.  This is because, even if the values were to be included during the creation of a dataset, the columns would have to be filtered during subsequent processing (see Step 2 of the requirement of this project).  Also, the Course Discussion here (https://class.coursera.org/getdata-015/forum/thread?thread_id=26 - Question: Do we need an inertial folder) points to the same fact I have stated here.
+       
+       
+
+The following commands reads contents of all the 
+
 
 
 
