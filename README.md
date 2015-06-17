@@ -38,8 +38,21 @@ The following command reads contents of x_test.txt file in the test folder.
 * xTestData <- read.delim(".\\UCI HAR Dataset\\test\\x_test.txt", sep = "", header=FALSE)
 
 Similarly, all the other relevant files (subject_test.txt, y_test.txt, x_train.txt, subject_train.txt, y_train.txt, activity_labels.txt and features.txt are read into dataframes).
-) 
+
 Please note that the location of files is relative to where the run_analysis.R script is present.  run_analysis.R should be at the same level as the UCI HAR Dataset folder is.  Please check folderimage.png here (https://github.com/sriramragav/GettingAndCleaningData/issues/1) in the repository for a better view.
+
+# Cleaning and Merging Test and Training Datasets
+There are a few things we can observe after loading the datasets.
+* Dimensions of xTest Data : 2947 x 561 (Observations (rows) vs Variables (columns) )
+* Dimensions of yTest Data : 2947 x 1 
+* Dimensions of subjectTest Data : 2947 x 1
+* Dimensions of features Data : 561 * 2
+* Dimensions of activity_labels : 6 * 2
+
+Also,
+We know that xTest does not have headers.  Looking at the dimensions and checking at readme.md that comes with the dataset, we can easily conclude that headers are in features dataset.  Using this information,
+names(xTestData) <- features[, 2]
+ensures that xTestData have headers.  We repeat the same exercise for xTrainData.  
 
 
 
