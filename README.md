@@ -20,6 +20,15 @@ The assignment demands that we do the following:
 * Appropriately labels the data set with descriptive variable names. 
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+#The Process - Section 1 : Downloading files
+The first step in the process is to download the files from the location specified above.  To do this, first we setup a working directory in R through the command:
+setwd("C:\\MyFolder\\DataScience\\MyRWork\\3GettingAndCleaningData\\Project-ThroughTheMonth")
+
+This is followed up with downloading the zip file using the commands:
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url,destfile="project.zip")
+
+The process of unzipping is manual.  By choosing a suitable unzipping program (like winzip or 7-zip), the contents of the zip file are extracted to the same folder set by the working directory.  
 
 
 
