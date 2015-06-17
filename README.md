@@ -39,6 +39,7 @@ The following command reads contents of x_test.txt file in the test folder.
 
 Similarly, all the other relevant files (subject_test.txt, y_test.txt, x_train.txt, subject_train.txt, y_train.txt, activity_labels.txt and features.txt are read into dataframes).
 
+Please note that the location of files is relative to where the run_analysis.R script is present.  run_analysis.R should be at the same level as the UCI HAR Dataset folder is.  Please check folderimage.png in the repository for a better view.
 
 
 
