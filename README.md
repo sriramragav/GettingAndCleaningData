@@ -81,7 +81,6 @@ Now onto the second requirement that asks us to extract only mean and std column
 * toMatch <- c("mean", "std", "subject", "activity")
 * tmpNames <- names(xData[1:5, grep(paste(toMatch,collapse="|"), names(xData))] )
 * xData <- xData[, tmpNames]
-
 * toMatch <- "meanFreq()"
 * tmpNames <- names(xData[1:5, 
 * grep(paste(toMatch,collapse="|"), names(xData))] )
@@ -105,3 +104,29 @@ The labelling is done through the following commands:
 * tmpNames <- gsub(".Z",".z",tmpNames)
 * names(xData) <- tmpNames
 
+#Creating the Tidy Result Set
+Now, only two steps remain.  One is to get the "Activity Descriptions" in and to summarize data based on Subject and Activity.  We will look at the command that helps summarize data first:
+
+* result <- aggregate(. ~ subject+activity, xData,mean)
+
+With this command, we create an independent tidy data set with the average of each variable for each activity and each subject.
+
+To bring in "Activity Descriptions" in, we do the following:  (remember that, at this time, xData contains "ActivityId" - for example, number '1' for "Walking, '2' for "Walking upstairs"...)
+
+* names(activityLabels) <- c("activity", "activityDesc")
+
+By renaming header for activityLabels dataset, we make it easier to join, as can be seen later.
+* Load 'plyr' to use the 'join' function
+* library(plyr)
+* result <- join(result, activityLabels)
+
+Since both result and activityLabels contain the common column 'activity', the 'join' functions uses this column for the join.  Now, 'activity description' is also part of the tidy result set. (satisfying requirement 3)
+
+Now, a little bit of rearranging:
+* Remove Activity (integer) because we have ActivityDescription
+* result <- result[, -2]
+
+* Get Activity and Subject as the first two columns for better readability
+* result <- result[,c(68, 1, 2:67)]
+
+Done!!!
