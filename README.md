@@ -82,7 +82,7 @@ Now onto the second requirement that asks us to extract only mean and std column
 * tmpNames <- names(xData[1:5, grep(paste(toMatch,collapse="|"), names(xData))] )
 * xData <- xData[, tmpNames]
 * toMatch <- "meanFreq()"
-* tmpNames <- names(xData[1:5, 
+* tmpNames <- names(xData[1:5, grep(paste(toMatch,collapse="|"), names(xData))] ) 
 * grep(paste(toMatch,collapse="|"), names(xData))] )
 * xData <- xData[,!(names(xData) %in% tmpNames)]
 
