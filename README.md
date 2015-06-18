@@ -14,11 +14,11 @@ The dataset itself can be found here: https://d396qusza40orc.cloudfront.net/getd
 The assignment demands that we do the following:
 
  You should create one R script called run_analysis.R that does the following. 
-* Merges the training and the test sets to create one data set.
-* Extracts only the measurements on the mean and standard deviation for each measurement. 
-* Uses descriptive activity names to name the activities in the data set
-* Appropriately labels the data set with descriptive variable names. 
-* From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+* Step 1: Merges the training and the test sets to create one data set.
+* Step 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
+* Step 3: Uses descriptive activity names to name the activities in the data set
+* Step 4: Appropriately labels the data set with descriptive variable names. 
+* Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 #The Process - Section 1 : Downloading files
 The first step in the process is to download the files from the location specified above.  To do this, first we setup a working directory in R through the command:
@@ -123,10 +123,10 @@ By renaming header for activityLabels dataset, we make it easier to join, as can
 Since both result and activityLabels contain the common column 'activity', the 'join' functions uses this column for the join.  Now, 'activity description' is also part of the tidy result set. (satisfying requirement 3)
 
 Now, a little bit of rearranging:
-* Remove Activity (integer) because we have ActivityDescription
+Remove Activity (integer) because we have ActivityDescription
 * result <- result[, -2]
 
-* Get Activity and Subject as the first two columns for better readability
+Get Activity and Subject as the first two columns for better readability
 * result <- result[,c(68, 1, 2:67)]
 
 Done!!!
