@@ -94,7 +94,7 @@ I have followed the style guide here:
 * https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
 for labelling the column headers.  
 
-It is not generally recommended that we have hyphens or parenthesis and so, following the style guide, column header named "tBodyAccJerk-energy()-X" becomes "tBodyAccJerk.energy.x".  I have chosen to use capitals in the column names (instead of, say "tbodyaccjerk.energy.x" due to readability reasons.
+It is not generally recommended that we have hyphens or parenthesis and so, following the style guide, column header named "tBodyAccJerk-energy()-X" becomes "tBodyAccJerk.energy.x".  I have chosen to use capitals in the column names (instead of, say "tbodyaccjerk.energy.x", it reads "tBodyAccJerk.energy.x" for better readability.
 
 The labelling is done through the following commands:
 
@@ -105,19 +105,3 @@ The labelling is done through the following commands:
 * tmpNames <- gsub(".Z",".z",tmpNames)
 * names(xData) <- tmpNames
 
-
-
-
-
-for labelling the column headers.  
-
-It is not generally recommended that we have hyphens or parenthesis and so, following the style guide, column header named "tBodyAccJerk-energy()-X" becomes "tBodyAccJerk.energy.x".  I have chosen to use capitals in the column names (instead of, say "tbodyaccjerk.energy.x" due to readability reasons.
-
-The labelling is done through the following commands:
-
-* tmpNames <- gsub("-",".",names(xData))
-* tmpNames <- gsub("\\(|\\)","",tmpNames)
-* tmpNames <- gsub(".X",".x",tmpNames)
-* tmpNames <- gsub(".Y",".y",tmpNames)
-* tmpNames <- gsub(".Z",".z",tmpNames)
-* names(xData) <- tmpNames
