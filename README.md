@@ -1,11 +1,7 @@
 # GettingAndCleaningData - Project
-This file does a couple of things
-* It explains the HOW of things - from the "Getting And Cleaning Data" project perspective.
-* Throws a brief light on all the files included in this repository namely:
-     * run_analysis.md
-     * CodeBook.md
-     * tidyds.txt
-   
+
+This readme explains the HOW of things - from the "Getting And Cleaning Data" project perspective.
+
 # The Assignment:
 The Human Activity Recognition using Smartphones Dataset Version 1.0 was created based on an experiment that was carried out with a group of 30 volunteers (referred to as "Subjects" in the dataset) who performed six activities (Walking, Walking_upstairs, Walking-downstairs,Sitting, Standing, Laying).  Information about this dataset can be found in the HAR-Readme.txt in this repository.  
 
