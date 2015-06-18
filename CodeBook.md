@@ -15,75 +15,74 @@ https://github.com/sriramragav/GettingAndCleaningData/blob/master/README.md
 * The image here: https://github.com/sriramragav/GettingAndCleaningData/issues/2 is a "keyhole" view of the "tidy dataset". Here is how we interpret the first observation: For "Walking" activity, the values you see from columns 3 - 68 are averages for subject "1".  For example the original dataset (including test and train data) contains 95 observations for subject "1" for "walking".  A mean of these 95 observations is what is captured in the "tidy dataset" across various features (or variables).
 
 # Variables (Features) List:
-activityDesc
-
-subject
-tBodyAcc.mean.x
-tBodyAcc.mean.y
-tBodyAcc.mean.z
-tBodyAcc.std.x
-tBodyAcc.std.y
-tBodyAcc.std.z
-tGravityAcc.mean.x
-tGravityAcc.mean.y
-tGravityAcc.mean.z
-tGravityAcc.std.x
-tGravityAcc.std.y
-tGravityAcc.std.z
-tBodyAccJerk.mean.x
-tBodyAccJerk.mean.y
-tBodyAccJerk.mean.z
-tBodyAccJerk.std.x
-tBodyAccJerk.std.y
-tBodyAccJerk.std.z
-tBodyGyro.mean.x
-tBodyGyro.mean.y
-tBodyGyro.mean.z
-tBodyGyro.std.x
-tBodyGyro.std.y
-tBodyGyro.std.z
-tBodyGyroJerk.mean.x
-tBodyGyroJerk.mean.y
-tBodyGyroJerk.mean.z
-tBodyGyroJerk.std.x
-tBodyGyroJerk.std.y
-tBodyGyroJerk.std.z
-tBodyAccMag.mean
-tBodyAccMag.std
-tGravityAccMag.mean
-tGravityAccMag.std
-tBodyAccJerkMag.mean
-tBodyAccJerkMag.std
-tBodyGyroMag.mean
-tBodyGyroMag.std
-tBodyGyroJerkMag.mean
-tBodyGyroJerkMag.std
-fBodyAcc.mean.x
-fBodyAcc.mean.y
-fBodyAcc.mean.z
-fBodyAcc.std.x
-fBodyAcc.std.y
-fBodyAcc.std.z
-fBodyAccJerk.mean.x
-fBodyAccJerk.mean.y
-fBodyAccJerk.mean.z
-fBodyAccJerk.std.x
-fBodyAccJerk.std.y
-fBodyAccJerk.std.z
-fBodyGyro.mean.x
-fBodyGyro.mean.y
-fBodyGyro.mean.z
-fBodyGyro.std.x
-fBodyGyro.std.y
-fBodyGyro.std.z
-fBodyAccMag.mean
-fBodyAccMag.std
-fBodyBodyAccJerkMag.mean
-fBodyBodyAccJerkMag.std
-fBodyBodyGyroMag.mean
-fBodyBodyGyroMag.std
-fBodyBodyGyroJerkMag.mean
-fBodyBodyGyroJerkMag.std
+* activityDesc
+* subject
+* tBodyAcc.mean.x
+* tBodyAcc.mean.y
+* tBodyAcc.mean.z
+* tBodyAcc.std.x
+* tBodyAcc.std.y
+* tBodyAcc.std.z
+* tGravityAcc.mean.x
+* tGravityAcc.mean.y
+* tGravityAcc.mean.z
+* tGravityAcc.std.x
+* tGravityAcc.std.y
+* tGravityAcc.std.z
+* tBodyAccJerk.mean.x
+* tBodyAccJerk.mean.y
+* tBodyAccJerk.mean.z
+* tBodyAccJerk.std.x
+* tBodyAccJerk.std.y
+* tBodyAccJerk.std.z
+* tBodyGyro.mean.x
+* tBodyGyro.mean.y
+* tBodyGyro.mean.z
+* tBodyGyro.std.x
+* tBodyGyro.std.y
+* tBodyGyro.std.z
+* tBodyGyroJerk.mean.x
+* tBodyGyroJerk.mean.y
+* tBodyGyroJerk.mean.z
+* tBodyGyroJerk.std.x
+* tBodyGyroJerk.std.y
+* tBodyGyroJerk.std.z
+* tBodyAccMag.mean
+* tBodyAccMag.std
+* tGravityAccMag.mean
+* tGravityAccMag.std
+* tBodyAccJerkMag.mean
+* tBodyAccJerkMag.std
+* tBodyGyroMag.mean
+* tBodyGyroMag.std
+* tBodyGyroJerkMag.mean
+* tBodyGyroJerkMag.std
+* fBodyAcc.mean.x
+* fBodyAcc.mean.y
+* fBodyAcc.mean.z
+* fBodyAcc.std.x
+* fBodyAcc.std.y
+* fBodyAcc.std.z
+* fBodyAccJerk.mean.x
+* fBodyAccJerk.mean.y
+* fBodyAccJerk.mean.z
+* fBodyAccJerk.std.x
+* fBodyAccJerk.std.y
+* fBodyAccJerk.std.z
+* fBodyGyro.mean.x
+* fBodyGyro.mean.y
+* fBodyGyro.mean.z
+* fBodyGyro.std.x
+* fBodyGyro.std.y
+* fBodyGyro.std.z
+* fBodyAccMag.mean
+* fBodyAccMag.std
+* fBodyBodyAccJerkMag.mean
+* fBodyBodyAccJerkMag.std
+* fBodyBodyGyroMag.mean
+* fBodyBodyGyroMag.std
+* fBodyBodyGyroJerkMag.mean
+* fBodyBodyGyroJerkMag.std
 
 
  
