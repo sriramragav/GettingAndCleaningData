@@ -16,6 +16,7 @@ https://github.com/sriramragav/GettingAndCleaningData/blob/master/README.md
 
 # Variables (Features) List:
 activityDesc
+
 subject
 tBodyAcc.mean.x
 tBodyAcc.mean.y
@@ -83,7 +84,6 @@ fBodyBodyGyroMag.mean
 fBodyBodyGyroMag.std
 fBodyBodyGyroJerkMag.mean
 fBodyBodyGyroJerkMag.std
-
 
 
  
